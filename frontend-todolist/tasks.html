@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes tâches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="page-shell">
+        <section class="hero">
+            <h1 id="welcome"></h1>
+            <p class="subtitle">Voir l’état de vos tâches et gérer rapidement vos priorités.</p>
+            <a class="secondary-button" href="stats.html">Voir les statistiques</a>
+        </section>
+
+        <section class="task-panel">
+            <form id="newTaskForm">
+                <label for="newTaskText">Nouvelle tâche</label>
+                <input id="newTaskText" type="text" placeholder="Saisir un titre de tâche" required>
+                <button type="submit">Ajouter</button>
+                <p id="formMessage"></p>
+            </form>
+
+            <ul id="todoList"></ul>
+        </section>
+    </main>
+
+    <script src="tasks.js"></script>
+
+</body>
+</html>

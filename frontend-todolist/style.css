@@ -1,0 +1,345 @@
+/* Base global */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #f7f8fa 0%, #e3ecff 100%);
+    color: #1f2937;
+}
+
+body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px;
+    min-height: 100vh;
+}
+
+h1 {
+    margin: 0 0 24px;
+    font-size: clamp(2rem, 3vw, 3rem);
+    text-align: center;
+    letter-spacing: -0.04em;
+}
+
+#userForm {
+    width: min(100%, 460px);
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+    padding: 32px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #334155;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 14px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+#message, #formMessage {
+    margin-top: 16px;
+    min-height: 1.25rem;
+    color: #16a34a;
+    font-weight: 600;
+    text-align: center;
+}
+
+#error {
+    margin-top: 16px;
+    min-height: 1.25rem;
+    color: #dc2626;
+    font-weight: 600;
+    text-align: center;
+}
+
+.page-shell {
+    width: min(100%, 940px);
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.hero,
+.task-panel,
+.detail-panel {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 28px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+    padding: 32px;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+    line-height: 1.05;
+}
+
+.subtitle {
+    margin: 18px auto 0;
+    max-width: 600px;
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.stats-panel {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    width: 100%;
+}
+
+.stat-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.04);
+    text-align: center;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card strong {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.chart-panel {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 28px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+    padding: 32px;
+}
+
+.chart-panel h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 1.5rem;
+    color: #0f172a;
+    text-align: center;
+}
+
+.chart-wrapper {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    min-height: 260px;
+    position: relative;
+}
+
+#tasksChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#newTaskForm {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+#newTaskForm label {
+    grid-column: 1 / -1;
+    font-weight: 700;
+    color: #334155;
+}
+
+#newTaskText {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 14px;
+    font-size: 1rem;
+}
+
+#newTaskForm p {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+#todoList {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 0;
+    display: grid;
+    gap: 12px;
+}
+
+#todoList li {
+    background: #f8fafc;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.task-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    max-width: min(65%, 560px);
+}
+
+.task-title {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.status-complete {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-pending {
+    background: #e0f2fe;
+    color: #0c4a6e;
+}
+
+#todoList li a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#todoList li a:hover {
+    text-decoration: underline;
+}
+
+a.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    margin-top: 18px;
+    border-radius: 14px;
+    background: #10b981;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+a.secondary-button:hover,
+a.secondary-button:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(16, 185, 129, 0.18);
+}
+
+.detail-actions {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+    justify-content: center;
+}
+
+.button-group button {
+    flex: 1 1 auto;
+    min-width: 140px;
+}
+
+button[type="submit"],
+.detail-panel button {
+    width: auto;
+    min-width: 140px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #4f46e5 0%, #2563eb 100%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button[type="submit"],
+.detail-panel button:hover,
+.detail-panel button:focus,
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.18);
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 16px;
+    }
+
+    #userForm {
+        padding: 24px;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    input[type="text"], button[type="submit"] {
+        font-size: 0.98rem;
+        padding: 13px 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    #userForm {
+        border-radius: 18px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
