@@ -1,0 +1,33 @@
+{
+  "name": "qcm",
+  "version": "1.0.0",
+  "description": "Ce projet est le backend pour l'application Todo List, destiné aux étudiants du Learning Campus pour le développement de projets frontend. Il fournit une API RESTful pour gérer une liste de tâches (todos).",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolasteixeira16-cell/totolist.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nicolasteixeira16-cell/totolist/issues"
+  },
+  "homepage": "https://github.com/nicolasteixeira16-cell/totolist#readme"
+}
