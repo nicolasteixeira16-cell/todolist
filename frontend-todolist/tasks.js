@@ -106,7 +106,7 @@ function renderTodos(todos) {
 function loadTodos() {
 
   // Envoie une requête GET au serveur.
-  fetch("http://localhost:3000/todos")
+  fetch("https://todolist-nu-two-35.vercel.app/todos")
 
     // Attend la réponse.
     .then(response =>
@@ -169,7 +169,7 @@ newTaskForm.addEventListener("submit", event => {
   }
 
   // Envoie une requête POST au serveur.
-  fetch("http://localhost:3000/todos", {
+  fetch("https://todolist-nu-two-35.vercel.app/todos", {
 
     // Méthode HTTP utilisée.
     method: "POST",

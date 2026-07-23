@@ -135,7 +135,7 @@ function loadTask() {
     }
 
     // Envoie une requête GET vers l'API.
-    fetch(`http://localhost:3000/todos/${id}`)
+    fetch(`https://todolist-nu-two-35.vercel.app/todos/${id}`)
 
         // Lorsque le serveur répond...
         .then(response => {
@@ -196,7 +196,7 @@ function loadTask() {
 function updateTask(payload, message) {
 
     // Envoie une requête PUT.
-    fetch(`http://localhost:3000/todos/${id}`, {
+    fetch(`https://todolist-nu-two-35.vercel.app/todos/${id}`, {
 
         // Méthode HTTP.
         method: "PUT",
@@ -267,7 +267,7 @@ reopenBtn.addEventListener("click", () => {
 deleteBtn.addEventListener("click", () => {
 
     // Envoie une requête DELETE.
-    fetch(`http://localhost:3000/todos/${id}`, {
+    fetch(`https://todolist-nu-two-35.vercel.app/todos/${id}`, {
 
         method: "DELETE"
     })
